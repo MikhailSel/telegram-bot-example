@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  shutdown: graceful
+
+spring:
+  data:
+    mongodb:
+      username: rootuser
+      password: rootpass
+      database: mydb
+      authentication-database: admin
+      port: 27017
+      host: localhost
+
+logging:
+  level:
+    org.zalando.logbook: TRACE
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
